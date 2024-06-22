@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+<br>
+
+<h3 style="color: #b30000; width:50%; margin-left:250px">Add in database</h3>
+    <form method="post" style="width:50%; margin-left: 10px">
+      <div class="form-group">
+        <input type="text" name="name" class="form-control" placeholder="name"><br>
+        <input type="text" name="year" class="form-control" placeholder="year"><br>
+         <input type="text" name="rating" class="form-control"  placeholder="rating"><br>
+      </div>
+
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% for catg, msg in messages %}
+                <p class="{{catg}}">{{msg}}</p>
+            {% endfor %}
+        {% endwith %}
+
+    <button type="submit" class="btn btn-outline-dark mt-3">Add Movie</button>
+    <img class="form-control mb-3 mt-3" src="https://www.iamherelearning.com/wp-content/uploads/2020/02/Movie-Icon-1-460x406.png" alt="W3Schools.com" style="width:460px;height:406px;">
+    </form>
+
+{% endblock %}
